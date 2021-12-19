@@ -458,6 +458,7 @@ fill: #eed200 ;}
     min-width: 1050px;
     padding: 1rem;
     padding-left: calc(19px + 10%);
+    overflow-x: hidden;
 }
 
 
