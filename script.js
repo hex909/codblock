@@ -1,14 +1,5 @@
-const card1 = document.querySelector(".feature-1")
-const card2 = document.querySelector(".feature-2")
-const card3 = document.querySelector(".feature-3")
-const card4 = document.querySelector(".feature-4")
 const nav_li1 = document.querySelector(".item1")
 const nav_li2 = document.querySelector(".item2")
-
-
-
-
-
 
 
 // hover effect
@@ -83,10 +74,14 @@ class HoverCard {
     }
   }
 
-new HoverCard(card1)
-new HoverCard(card2)
-new HoverCard(card3)
-new HoverCard(card4)
+
+  const card_data = document.querySelectorAll(".feature-item");
+
+  card_data.forEach(e => {
+    new HoverCard(e)
+  })
+
+
 new HoverCard(nav_li1)
 new HoverCard(nav_li2)
 
@@ -100,6 +95,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 })
 
 
+// home effect
 var tl = gsap.timeline()
 
 gsap.from("#white-hand", {rotate: "-.5deg", duration: 1,repeat: "-1", yoyo: true})
