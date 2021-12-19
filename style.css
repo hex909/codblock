@@ -32,13 +32,10 @@ p, a {
     font-family: var(--para-font);
 }
 
-body {
-    user-select: none;
-    overflow-x: hidden;
-}
 
 section {
-  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 
@@ -467,7 +464,6 @@ fill: #eed200 ;}
     min-width: 1050px;
     padding: 1rem;
     padding-left: calc(19px + 10%);
-    overflow-x: hidden;
 }
 
 
