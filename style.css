@@ -4,6 +4,28 @@
     box-sizing: border-box;
 }
 
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #c0c0c0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #6c63ff;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a7a3ff;
+}
+
+
 :root {
     --logo-font: 'Major Mono Display', monospace;
     --title-font: 'Ubuntu', sans-serif;
@@ -480,9 +502,26 @@ width: 100vh
     scrollbar-width: none;
 }
 
-.feature-items::-webkit-scrollbar {
-  display: none;
+.features-items::-webkit-scrollbar {
+  width: 1px;
 }
+
+/* Track */
+.features-items::-webkit-scrollbar-track {
+  background: #c0c0c000;
+}
+
+/* Handle */
+.features-items::-webkit-scrollbar-thumb {
+  background: #ffffff00;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.features-items::-webkit-scrollbar-thumb:hover {
+  background: #a7a3ff;
+}
+
 
 .feature-item {
     padding: 2rem;
@@ -562,27 +601,6 @@ footer {
         transform: rotate(360deg);
     }
 }
-
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #c0c0c0;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #6c63ff;
-    border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #a7a3ff;
-  }
-
 
 @media screen and (max-width: 850px) {
     .spilt-container .image-con {
