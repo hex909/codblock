@@ -1,8 +1,54 @@
 const nav_li1 = document.querySelector(".item1");
 const nav_li2 = document.querySelector(".item2");
 const body = document.querySelector("body");
+const card_data = document.querySelectorAll(".feature-item");
 
-// hover effect
+
+
+// ----------------------loading
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    $(".load-wrap").fadeOut(1000);
+    document.querySelector(".wrapper").classList.remove("wrapper");
+  }, 500);
+});
+
+// home effect
+var tl = gsap.timeline();
+
+gsap.from("#white-hand", {
+  rotate: "-.5deg",
+  duration: 1,
+  repeat: "-1",
+  yoyo: true,
+});
+gsap.from("#black-hand", {
+  rotate: "10deg",
+  duration: 1,
+  repeat: "-1",
+  yoyo: true,
+});
+gsap.from("#black-hair , #black-head", {
+  rotation: 1,
+  duration: 1,
+  repeat: "-1",
+  yoyo: true,
+});
+gsap.from("#white-hair , #white-head", {
+  rotateZ: "1deg",
+  duration: 1,
+  repeat: "-1",
+  yoyo: true,
+});
+
+// monitor text
+tl.from("#computer-text *", { opacity: 0, duration: 1, stagger: 0.1 });
+tl.to(".errMess *", { fill: "red" }, "-=.5");
+tl.to(".errMess *", { fill: "lightgreen" }, "+=1");
+tl.to(".errMess *", { onComplete: () => { tl.restart();},},"+=1");
+
+
+//-------------------hover effect
 class HoverCard {
   constructor(el) {
     this.el = el;
@@ -74,7 +120,6 @@ class HoverCard {
   }
 }
 
-const card_data = document.querySelectorAll(".feature-item");
 
 card_data.forEach((e) => {
   new HoverCard(e);
@@ -83,65 +128,14 @@ card_data.forEach((e) => {
 new HoverCard(nav_li1);
 new HoverCard(nav_li2);
 
-document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
-    $(".load-wrap").fadeOut(1000);
-    document.querySelector(".wrapper").classList.remove("wrapper");
-  }, 1000);
-});
-
-// home effect
-var tl = gsap.timeline();
-
-gsap.from("#white-hand", {
-  rotate: "-.5deg",
-  duration: 1,
-  repeat: "-1",
-  yoyo: true,
-});
-gsap.from("#black-hand", {
-  rotate: "10deg",
-  duration: 1,
-  repeat: "-1",
-  yoyo: true,
-});
-gsap.from("#black-hair , #black-head", {
-  rotation: 1,
-  duration: 1,
-  repeat: "-1",
-  yoyo: true,
-});
-gsap.from("#white-hair , #white-head", {
-  rotateZ: "1deg",
-  duration: 1,
-  repeat: "-1",
-  yoyo: true,
-});
-
-// monitor text
-tl.from("#computer-text *", { opacity: 0, duration: 1, stagger: 0.1 });
-tl.to(".errMess *", { fill: "red" }, "-=.5");
-tl.to(".errMess *", { fill: "lightgreen" }, "+=1");
-tl.to(
-  ".errMess *",
-  {
-    onComplete: () => {
-      tl.restart();
-    },
-  },
-  "+=1"
-);
-
-// --------------------------------------------------------------------------------feature scroll
+// --------------------------------------------------------------feature scroll
 const feature_scroll = document.querySelector(".features-items")
 feature_scroll.scrollLeft = 0
-
 
 let pos = {x:0, left:0}
 
 const mouseDownHandler = function (e) {
   feature_scroll.style.cursor = 'grabbing';
-  feature_scroll.style.userSelect = 'none';
   pos = {
       left: feature_scroll.scrollLeft,
       x: e.clientX,
@@ -164,10 +158,13 @@ const mouseUpHandler = function () {
   feature_scroll.style.cursor = 'grab';
   feature_scroll.style.removeProperty('user-select');
 };
+
+
 feature_scroll.addEventListener("mousedown", mouseDownHandler)
 
-let previous_scroll = 0
-feature_scroll.addEventListener("wheel", (e) => {
-    e.preventDefault();
-    feature_scroll.scrollLeft += e.deltaY + 10;
-});
+
+// mousewheel scroll slider
+// feature_scroll.addEventListener("wheel", (e) => {
+//     e.preventDefault();
+//     feature_scroll.scrollLeft += e.deltaY + 20;
+// });

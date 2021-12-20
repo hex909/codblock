@@ -27,21 +27,18 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
-body {
-  user-select: none;
-}
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--title-font);
-
+  font-family: var(--title-font);
+  
 }
 
 p, a {
-    font-family: var(--para-font);
+  font-family: var(--para-font);
 }
 
-
 section {
+  user-select: none;
   width: 100%;
   overflow-x: hidden;
 }
@@ -392,7 +389,9 @@ section {
     transform-box: fill-box;
 }
 #sun #Vector {
-fill: #eed200 ;}
+fill: #eed200;
+width: 100vh
+}
 
 #sun #Vector.dark{
     animation: rota 5s forwards;
@@ -473,10 +472,16 @@ fill: #eed200 ;}
     min-width: 150px;
     width: calc(100% - (19px + 10%));
     padding: 4rem;
-    overflow: hidden;
+    overflow: auto;
     cursor: grab;
     margin-left: auto;
     scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.feature-items::-webkit-scrollbar {
+  display: none;
 }
 
 .feature-item {
