@@ -503,23 +503,23 @@ width: 100vh
 }
 
 .features-items::-webkit-scrollbar {
-  width: 1px;
+  height: 4px;
 }
 
 /* Track */
 .features-items::-webkit-scrollbar-track {
-  background: #d1121200;
+  background: #c0c0c000;
 }
 
 /* Handle */
 .features-items::-webkit-scrollbar-thumb {
-  background: #75202000;
+  background: #3535eb00;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 .features-items::-webkit-scrollbar-thumb:hover {
-  background: #2018b4;
+  background: #00000000;
 }
 
 
