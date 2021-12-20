@@ -50,8 +50,10 @@ tl.to(".errMess *", { onComplete: () => { tl.restart();},},"+=1");
 
 //-------------------hover effect
 class HoverCard {
-  constructor(el) {
+  constructor(el, b, scale= 1.05) {
     this.el = el;
+    this.b = b;
+    this.scale = scale;
     this.hover = false;
     this.calculatePosition();
     this.attachEventsListener();
@@ -100,9 +102,9 @@ class HoverCard {
 
   onHover(x, y) {
     gsap.to(this.el, {
-      x: (x - this.x) * 0.2,
-      y: (y - this.y) * 0.2,
-      scale: 1.05,
+      x: (x - this.x) * this.b,
+      y: (y - this.y) * this.b,
+      scale: this.scale,
       ease: "power2.out",
       duration: 0.4,
     });
@@ -122,11 +124,11 @@ class HoverCard {
 
 
 card_data.forEach((e) => {
-  new HoverCard(e);
+  new HoverCard(e, .02, 1.02);
 });
 
-new HoverCard(nav_li1);
-new HoverCard(nav_li2);
+new HoverCard(nav_li1, 0.2);
+new HoverCard(nav_li2, 0.2);
 
 // --------------------------------------------------------------feature scroll
 const feature_scroll = document.querySelector(".features-items")
