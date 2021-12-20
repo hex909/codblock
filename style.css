@@ -494,7 +494,7 @@ width: 100vh
     min-width: 150px;
     width: calc(100% - (19px + 10%));
     padding: 4rem;
-    overflow: hidden;
+    overflow: auto;
     cursor: grab;
     margin-left: auto;
     scroll-behavior: smooth;
@@ -508,18 +508,18 @@ width: 100vh
 
 /* Track */
 .features-items::-webkit-scrollbar-track {
-  background: #c0c0c000;
+  background: #d1121200;
 }
 
 /* Handle */
 .features-items::-webkit-scrollbar-thumb {
-  background: #ffffff00;
+  background: #75202000;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 .features-items::-webkit-scrollbar-thumb:hover {
-  background: #a7a3ff;
+  background: #2018b4;
 }
 
 

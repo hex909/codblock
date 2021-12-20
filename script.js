@@ -162,7 +162,6 @@ const mouseUpHandler = function () {
   document.removeEventListener('touchend', mouseUpHandler);
 
   feature_scroll.style.cursor = 'grab';
-  feature_scroll.style.removeProperty('user-select');
 };
 
 
