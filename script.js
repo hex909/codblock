@@ -145,7 +145,7 @@ const mouseDownHandler = function (e) {
   document.addEventListener('touchmove', mouseMoveHandler);
 
   document.addEventListener('mouseup', mouseUpHandler);
-  document.addEventListener('touchcancel', mouseUpHandler);
+  document.addEventListener('touchend', mouseUpHandler);
 };
 
 const mouseMoveHandler = function (e) {
@@ -157,9 +157,9 @@ const mouseMoveHandler = function (e) {
 const mouseUpHandler = function () {
   document.removeEventListener('mousemove', mouseMoveHandler);
   document.removeEventListener('touchmove', mouseMoveHandler);
-  
+
   document.removeEventListener('mouseup', mouseUpHandler);
-  document.removeEventListener('touchcancel', mouseUpHandler);
+  document.removeEventListener('touchend', mouseUpHandler);
 
   feature_scroll.style.cursor = 'grab';
   feature_scroll.style.removeProperty('user-select');
