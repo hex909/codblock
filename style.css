@@ -75,7 +75,7 @@ p, a {
   font-family: var(--para-font);
 }
 
-.nav-bar {
+.nav-bar, main {
   position: relative;
   z-index: 1;
 }
@@ -84,8 +84,6 @@ section {
   user-select: none;
   width: 100%;
   overflow-x: hidden;
-  position: relative;
-  z-index: 1;
   background-color: var(--home-Bgcolor);
 }
 
@@ -363,7 +361,7 @@ section {
 }
 
 .nav-anim:hover {
-    color: var(--hover-color,red);
+    color: var(--hover-color);
   }
   
 .nav-anim:before {
