@@ -550,20 +550,19 @@ width: 100vh
 
 footer {
   overflow: hidden;
-  
+  user-select: none;
 }
 
 .footer-content-container {
-  background-color: rgb(148, 148, 148);
-    width: 100%;
-    min-height: 100vh;
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    display: grid;
-    place-items: center;
-    background-color: rgb(231, 160, 5);
-    padding: 1rem;
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background-color: rgb(231, 160, 5);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
 .footer-container {
@@ -607,7 +606,40 @@ footer {
 
 #email-address {
   cursor: url("./images/icon/copy2.png"), pointer;
+  position: relative;
+  user-select: text;
 }
+
+#email-address::after {
+  content: "click to copy";
+  font-size: .81rem;
+  position: absolute;
+  top:100%;
+  width: 70%;
+  left: 50%;
+  font-family: var(--para-font);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-50%);
+  z-index: 11;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  opacity: 0;
+  transition: opacity .8s;
+  text-transform: capitalize;
+  transition-delay: .1s;
+}
+
+#email-address.copied::after {
+  content: "copied!";
+}
+
+#email-address:hover::after {
+  opacity: .91;
+} 
 
 .footer-svg-wrapper {
   width: 55%  ;
@@ -661,7 +693,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1020px) {
   .footer-items {
     flex-direction: column;
     justify-content: space-evenly;
@@ -669,8 +701,8 @@ footer {
   .footer-title-2 {
     margin-top: 5rem;
   }
-  
 }
+
 
 @media screen and (max-width: 850px) {
     .spilt-container .image-con {
@@ -713,6 +745,7 @@ footer {
     .work-card:not(:last-child) {
         margin-bottom: 1rem;
     }
+
 }
 @media screen and (max-width: 600px) {
     .nav-items {

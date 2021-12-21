@@ -263,8 +263,14 @@ TweenMax.fromTo(
   },
 )
 
-
 const copyEmail = document.getElementById('email-address');
 copyEmail.addEventListener('click', () => {
   navigator.clipboard.writeText(copyEmail.textContent);
+  copyEmail.classList.add("copied")
+
+  copyEmail.addEventListener("mouseleave", () => {
+    copyEmail.addEventListener("transitionend", ()=> {
+      copyEmail.classList.remove("copied")
+    })
+  })
 })
