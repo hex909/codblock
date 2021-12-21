@@ -33,6 +33,17 @@
     --text-color: #000;
 
     /* darktheme */
+    --nav-Bgcolor: #fff;
+    --home-Bgcolor:#fff;
+    --section-home-Bgcolor: #fff;
+    --section-work-Bgcolor: #fff;
+    --section-feature-Bgcolor: #fff;
+    --section-footer-Bgcolor: #fff;
+    --hover-Bgcolor: #fff;
+    --hover-color: #fff;
+
+
+
     --primary-color : #29272a;
     --secondary-color : #774069;
 
@@ -655,22 +666,22 @@ footer svg {
 /* theme */
 
 .nav-bar {
-    background-color: #c0c0c0;
+    background-color: var(--nav-Bgcolor);
 }
 .home {
-    background-color: #c4c4ff;
+    background-color: var(--home-Bgcolor);
 }
 
 .work {
-    background-color: aqua;
+    background-color: var(--section-work-Bgcolor);
 }
 
 .features {
-    background-color: #eed200;  
+    background-color: var(--section-feature-Bgcolor);  
 }
 
 footer {
-  background-color: #774069;
+  background-color: var(--section-footer-Bgcolor);
 }
 
 
