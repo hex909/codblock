@@ -34,18 +34,24 @@
 
     /* darktheme */
     --nav-Bgcolor: #fff;
-    --home-Bgcolor:#fff;
-    --section-home-Bgcolor: #fff;
-    --section-work-Bgcolor: #fff;
-    --section-feature-Bgcolor: #fff;
-    --section-footer-Bgcolor: #fff;
+    --nav-color: #000;
+
+    --home-Bgcolor: #fff;
+    --home-color: #000;
+
+    --work-Bgcolor: #fff;
+    --work-color: #000;
+    
+    --feature-Bgcolor: #fff;
+    --feature-color: #000;
+
+    --footer-Bgcolor: #fff;
+    --footer-color: #000;
+
+
     --hover-Bgcolor: #fff;
     --hover-color: #fff;
 
-
-
-    --primary-color : #29272a;
-    --secondary-color : #774069;
 
     /* light theme */
 
@@ -339,7 +345,7 @@ section {
     display: block;
     padding: .8rem;
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--nav-color);
     border-radius: 10px;
 }
 
@@ -350,7 +356,7 @@ section {
 }
 
 .nav-anim:hover {
-    color: #fff;
+    color: var(--home-color);
   }
   
 .nav-anim:before {
@@ -360,7 +366,7 @@ section {
     right: 0;
     width: 100%;
     height: 100%;
-    background: #6c63ff;
+    background: var(--hover-Bgcolor);
     transition: .5s;
     z-index: -1;
   }
@@ -376,6 +382,8 @@ section {
     padding-top: 2rem;
     padding-bottom: 5rem;
     min-height: 85vh;
+    color: var(--home-color);
+    background-color: var(--home-Bgcolor);
 }
 
 .spilt-container {
@@ -437,6 +445,8 @@ width: 100vh
     padding:2rem 1rem;
     text-align: center;
     min-height: 90vh;
+    background-color: var(--work-Bgcolor);
+    color: var(--work-color);
 }
 
 .work-text-con {
@@ -484,6 +494,8 @@ width: 100vh
 .features {
     padding: 1rem;
     padding-right: 0;
+    background-color: var(--feature-Bgcolor);
+    color: var(--feature-color);
 }
 
 .features-text-con {
@@ -562,6 +574,8 @@ width: 100vh
 footer {
   overflow: hidden;
   user-select: none;
+  background-color: var(--footer-Bgcolor);
+  color: var(--footer-color);
 }
 
 .footer-content-container {
