@@ -13,6 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 500);
 });
 
+
+//toggler
+
+
+
 // home effect
 var tl = gsap.timeline();
 
