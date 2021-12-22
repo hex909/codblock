@@ -45,6 +45,7 @@
     --feature-color: #000;
 
     --footer-Bgcolor: #fff;
+    --footer-second: rgb(146, 114, 114);
     --footer-color: #000;
 
 
@@ -69,6 +70,7 @@
   --feature-color: #fff;
 
   --footer-Bgcolor: #000;
+  --footer-second: rgb(71, 47, 47);
   --footer-color: #fff;
 
 
@@ -632,7 +634,6 @@ footer {
   width: 100%;
   display: grid;
   place-items: center;
-  background-color: rgb(231, 160, 5);
   padding: 1rem;
 }
 
@@ -648,8 +649,7 @@ footer {
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: rgb(250, 110, 59);
-  color:cornsilk;
+  background-color: var(--footer-second);
   cursor: default;
 }
 
@@ -670,7 +670,7 @@ footer {
 }
 
 .email-link {
-  color: white;
+  color: var(--footer-color);
   font-weight: 900;
   cursor: pointer;
 }
@@ -727,21 +727,26 @@ footer svg {
 
 .nav-bar {
     background-color: var(--nav-Bgcolor);
-}
-.home {
+    transition: background-color .5s, color .6s;
+  }
+  .home {
     background-color: var(--home-Bgcolor);
-}
-
-.work {
+    transition: background-color .5s, color .6s;
+  }
+  
+  .work {
     background-color: var(--work-Bgcolor);
-}
-
-.features {
+    transition: background-color .5s, color .6s;
+  }
+  
+  .features {
     background-color: var(--feature-Bgcolor);  
-}
-
-footer {
-  background-color: var(--footer-Bgcolor);
+    transition: background-color .5s, color .6s;
+  }
+  
+  footer {
+    background-color: var(--footer-Bgcolor);
+    transition: background-color .5s, color .6s;
 }
 
 
@@ -881,3 +886,13 @@ footer {
 
 }
 
+
+/* theme toggler */
+
+.toggler-contanier {
+  width: 100px;
+  height: 50px;
+  margin-top: .5rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}

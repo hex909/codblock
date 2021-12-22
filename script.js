@@ -5,6 +5,14 @@ const card_data = document.querySelectorAll(".feature-item");
 
 
 
+const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+if(userPrefersDark){
+  body.classList.remove("light");
+  body.classList.add("dark");
+}
+
+
+
 // ----------------------loading
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
@@ -14,7 +22,41 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+
 //toggler
+const toggler = document.querySelector("#toggle-svg-container")
+
+gsap.set(".stars", {x: 0, y: 0, opacity: 0});
+gsap.set("#moon-toggle, .star", {opacity: 0});
+gsap.set("#sun-toggle, #cloud, #moon-toggle", {x: 0});
+
+
+toggler.addEventListener("click",()=> {
+  if (toggler.classList.contains("dark")) {
+    gsap.to("#sun-toggle", .5, {x: "-15", opacity: 0, ease: Power1.easeInOut});
+    gsap.to("#cloud", .5, {opacity: 0, ease: Power1.easeInOut});
+    gsap.to("#moon-toggle", .5, {x: "-15", rotate: -360, transformOrigin: "center", opacity: 1, ease: Power1.easeInOut});
+    gsap.to(".stars", .5, {opacity: 1, ease: Power1.easeInOut});
+    gsap.to("#background", .5, {fill: "#224f6d", stroke: "#cad4d8", ease: Power1.easeInOut});
+    toggler.classList.add("light")
+    toggler.classList.remove("dark")
+    body.className = "light"
+  }
+  else {
+    gsap.to("#sun-toggle", .5, {x: 0, opacity: 1, ease: Power1.easeInOut});
+    gsap.to("#cloud", 1, {opacity: 1, ease: Power1.easeInOut});
+    gsap.to("#moon-toggle", .5, {opacity: 0, x: 0, rotate: 360, transformOrigin: "center", ease: Power1.easeInOut});
+    gsap.to(".stars", 1, {opacity: 0, ease: Power1.easeInOut});
+    gsap.to("#background", .5, {fill: "#9CD6EF", stroke: "#65c0e7", ease: Power1.easeInOut});
+    toggler.classList.add("dark")
+    toggler.classList.remove("light")
+    body.className = "dark"
+    
+  }
+  
+});
+
 
 
 
