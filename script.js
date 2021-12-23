@@ -40,7 +40,6 @@ if (localStorage.getItem("theme") != null) {
 }
 
 //toggler
-
 gsap.set(".stars", {x: 0, y: 0, opacity: 0});
 gsap.set("#moon-toggle, .star", {opacity: 0});
 gsap.set("#sun-toggle, #cloud, #moon-toggle", {x: 0});
@@ -80,7 +79,6 @@ function togglerAnimate(run) {
   }
 }
 
-
 function cacheTheme(theme) {
   if (theme === "dark") {
     localStorage.setItem("theme", "dark")
@@ -88,8 +86,6 @@ function cacheTheme(theme) {
     localStorage.setItem("theme", "light")
   }
 }
-
-
 
 // home effect
 var tl = gsap.timeline();
@@ -245,9 +241,9 @@ feature_scroll.addEventListener("mousedown", mouseDownHandler)
 // });
 
 
-// footer animation 
-
-TweenMax.fromTo(
+// --------------------------------------footer animation 
+  
+gsap.fromTo(
   '.sun-light',
   2.5,
   {
@@ -262,7 +258,7 @@ TweenMax.fromTo(
   }
 );
 const zeppelinAnimationTime = 4.47;
-TweenMax.to(
+gsap.to(
   '#zeppelin',
   zeppelinAnimationTime,
   {
@@ -272,7 +268,7 @@ TweenMax.to(
     ease: Back.easeInOut.config(5),
   }
 );
-TweenMax.to(
+gsap.to(
   '#tracks',
   zeppelinAnimationTime,
   {
@@ -285,10 +281,10 @@ TweenMax.to(
 [...document.querySelectorAll('.track')].map((track, i) => {
   const trackLength = track.getTotalLength();
 
-  TweenMax.set(track, {
+  gsap.set(track, {
     'stroke-dasharray': trackLength,
   });
-  TweenMax.fromTo(
+  gsap.fromTo(
     track,
     zeppelinAnimationTime / 5,
     {
@@ -307,7 +303,7 @@ TweenMax.to(
 const frontClouds = document.getElementById('clouds-front');
 const frontCloudsWidth = 9106;
 
-TweenMax.fromTo(
+gsap.fromTo(
   frontClouds,
   11.98,
   {
@@ -323,7 +319,7 @@ TweenMax.fromTo(
 const backClouds = document.getElementById('clouds-back')
 const backCloudsWidth = 3716; // from sketch app
 
-TweenMax.fromTo(
+gsap.fromTo(
   backClouds,
   17.43,
   {
@@ -347,3 +343,5 @@ copyEmail.addEventListener('click', () => {
     })
   })
 })
+
+// nighit svg footer
