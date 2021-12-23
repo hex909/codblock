@@ -30,30 +30,7 @@
     --logo-font: 'Major Mono Display', monospace;
     --title-font: 'Ubuntu', sans-serif;
     --para-font: 'M PLUS 1p', sans-serif;
-
-    /* darktheme */
-    --nav-Bgcolor: #fff;
-    --nav-color: #000;
-
-    --home-Bgcolor: #fff;
-    --home-color: #000;
-
-    --work-Bgcolor: #fff;
-    --work-color: #000;
-    
-    --feature-Bgcolor: #fff;
-    --feature-color: #000;
-
-    --footer-Bgcolor: #fff;
-    --footer-second: rgb(146, 114, 114);
-    --footer-color: #000;
-
-
-    --hover-Bgcolor: #000;
-    --hover-color: #fff;
-
-
-
+    --nav-bar-height : 80px;
 }
 
 .dark {
@@ -68,6 +45,8 @@
   
   --feature-Bgcolor: #000;
   --feature-color: #fff;
+  --shadow-color: #fff;
+
 
   --footer-Bgcolor: #000;
   --footer-second: rgb(71, 47, 47);
@@ -90,10 +69,11 @@
   
   --feature-Bgcolor: #fff;
   --feature-color: #000;
+  --shadow-color: #000;
+
 
   --footer-Bgcolor: #fff;
   --footer-second: rgb(221, 41, 41);
-
   --footer-color: #000;
 
 
@@ -107,13 +87,12 @@ img, svg {
 
 html {
     font-size: 16px;
-    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
 }
 
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--title-font);
-  
 }
 
 p, a {
@@ -122,13 +101,13 @@ p, a {
 
 .nav-bar, main {
   position: relative;
+  overflow-x: hidden;
   z-index: 1;
 }
 
 section {
   user-select: none;
   width: 100%;
-  overflow-x: hidden;
   background-color: var(--home-Bgcolor);
 }
 
@@ -366,6 +345,7 @@ section {
 } */
 
 .nav-container {
+    height: var(--nav-bar-height);
     width: 90%;
     margin: 0 auto;
     padding: .4rem;
@@ -431,9 +411,9 @@ section {
 .home {
     padding-top: 2rem;
     padding-bottom: 5rem;
-    min-height: 85vh;
     color: var(--home-color);
     background-color: var(--home-Bgcolor);
+    min-height: calc(100vh - var(--nav-bar-height));
 }
 
 .spilt-container {
@@ -470,7 +450,7 @@ section {
 
 
 .pair-programming {
-    width: clamp(350px, 100%, 650px);
+    width: clamp(350px, 100%, 600px);
     display: block;
     margin-left: auto;
 }
@@ -491,10 +471,13 @@ width: 100vh
 
 
 /*------------------------------------------------------- section work-------------------------------------- */
+.work-feature-container {
+  min-height: 100vh;
+}
+
 .work {
-    padding:2rem 1rem;
+    padding:1rem 1rem;
     text-align: center;
-    min-height: 90vh;
     background-color: var(--work-Bgcolor);
     color: var(--work-color);
 }
@@ -566,7 +549,7 @@ width: 100vh
     justify-content: space-between;
     min-width: 150px;
     width: calc(100% - (19px + 10%));
-    padding: 4rem;
+    padding: 1rem .4rem;
     overflow: auto;
     cursor: grab;
     margin-left: auto;
@@ -600,7 +583,7 @@ width: 100vh
     padding: 2rem;
     min-width: 250px;
     height: 300px;
-    box-shadow: 0 0 5px 0 #222;
+    box-shadow: 0 0 5px 0 var(--shadow-color);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -803,7 +786,7 @@ footer svg {
     }
 
     .spilt-container {
-        min-height: 50vh;
+        min-height: 70vh;
         padding: 0 1rem;
         justify-content: left;
     }
