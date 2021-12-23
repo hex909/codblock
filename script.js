@@ -11,7 +11,7 @@ if(userPrefersDark){
   body.classList.add("dark");
 }
 
-
+gsap.registerPlugin(ScrollTrigger)
 
 // ----------------------loading
 document.addEventListener("DOMContentLoaded", () => {
@@ -52,7 +52,6 @@ toggler.addEventListener("click",()=> {
     toggler.classList.add("dark")
     toggler.classList.remove("light")
     body.className = "dark"
-    
   }
   
 });
@@ -196,7 +195,6 @@ const mouseDownHandler = function (e) {
 
 const mouseMoveHandler = function (e) {
   const dx = e.clientX - pos.x;
-
   feature_scroll.scrollLeft = pos.left - dx;
 };
 
@@ -219,6 +217,7 @@ feature_scroll.addEventListener("mousedown", mouseDownHandler)
 
 
 // footer animation 
+
 TweenMax.fromTo(
   '.sun-light',
   2.5,
@@ -320,4 +319,9 @@ copyEmail.addEventListener('click', () => {
       copyEmail.classList.remove("copied")
     })
   })
+})
+
+const scrollHeight = document.body.scrollHeight;
+$(".link2").click(function () {
+  window.scrollTo(10,scrollHeight )
 })
