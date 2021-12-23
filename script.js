@@ -64,6 +64,7 @@ function togglerAnimate(run) {
     toggler.classList.add("light")
     toggler.classList.remove("dark")
     body.className = "light"
+    toDaysvg()
     cacheTheme(body.className)
   }
   else {
@@ -75,6 +76,7 @@ function togglerAnimate(run) {
     toggler.classList.add("dark")
     toggler.classList.remove("light")
     body.className = "dark"
+    toNightsvg()
     cacheTheme(body.className)
   }
 }
@@ -344,4 +346,20 @@ copyEmail.addEventListener('click', () => {
   })
 })
 
-// nighit svg footer
+// // nighit svg footer
+if (localStorage.getItem("theme") === "dark"){
+  toNightsvg()
+}else toDaysvg()
+
+function toNightsvg() {
+  gsap.to(".footer-background-svg", { fill: 'url("#linearGradient-2")'})
+  gsap.to(".sun-light", {fill: "#a2b5bf"})
+  gsap.to(".sun-core", {fill: "#a2b5bf"})
+  gsap.to("#clouds-back", {fill: "#999997", opacity: .2})
+}
+function toDaysvg() {
+  gsap.to(".footer-background-svg", { fill: 'url("#linearGradient-1")'})
+  gsap.to(".sun-light", {fill: "#FFFF66"})
+  gsap.to(".sun-core", {fill: "#FFFF66"})
+  gsap.to("#clouds-back", {fill: "#FFFF66", opacity: 1})
+}
