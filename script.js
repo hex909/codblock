@@ -1,39 +1,62 @@
-const nav_li1 = document.querySelector(".item1");
-const nav_li2 = document.querySelector(".item2");
-const body = document.querySelector("body");
-const card_data = document.querySelectorAll(".feature-item");
-
-
-
-const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-if(userPrefersDark){
-  body.classList.remove("light");
-  body.classList.add("dark");
-}
-
 gsap.registerPlugin(ScrollTrigger)
 
 // ----------------------loading
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     $(".load-wrap").fadeOut(1000);
-    document.querySelector(".wrapper").classList.remove("wrapper");
-  }, 500);
+  }, 300);
 });
 
 
+const nav_li1 = document.querySelector(".item1");
+const nav_li2 = document.querySelector(".item2");
+const body = document.querySelector("body");
+const card_data = document.querySelectorAll(".feature-item");
+const toggler = document.querySelector("#toggle-svg-container")
 
+// caching theme
+if (localStorage.getItem("theme") != null) {
+  if (localStorage.getItem("theme") === "dark") {
+    body.className = "dark"
+    togglerAnimate("light")
+  } else {
+    body.className = "light"
+    togglerAnimate("dark")
+  }
+  
+}else {
+    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if(userPrefersDark){
+      toggler.classList.add("dark")
+      toggler.classList.remove("light")
+      body.className = "dark";
+      localStorage.setItem("theme", "dark")
+      togglerAnimate("light")
+    }else {
+      body.className = "light";
+      localStorage.setItem("theme", "light")
+      togglerAnimate("dark")
+    }
+}
 
 //toggler
-const toggler = document.querySelector("#toggle-svg-container")
 
 gsap.set(".stars", {x: 0, y: 0, opacity: 0});
 gsap.set("#moon-toggle, .star", {opacity: 0});
 gsap.set("#sun-toggle, #cloud, #moon-toggle", {x: 0});
 
 
-toggler.addEventListener("click",()=> {
+toggler.addEventListener("click", ()=> {
   if (toggler.classList.contains("dark")) {
+    togglerAnimate("dark")
+  }else {
+    togglerAnimate("light")
+  }
+});
+
+
+function togglerAnimate(run) {
+  if (run === "dark"){
     gsap.to("#sun-toggle", .5, {x: "-15", opacity: 0, ease: Power1.easeInOut});
     gsap.to("#cloud", .5, {opacity: 0, ease: Power1.easeInOut});
     gsap.to("#moon-toggle", .5, {x: "-15", rotate: -360, transformOrigin: "center", opacity: 1, ease: Power1.easeInOut});
@@ -42,6 +65,7 @@ toggler.addEventListener("click",()=> {
     toggler.classList.add("light")
     toggler.classList.remove("dark")
     body.className = "light"
+    cacheTheme(body.className)
   }
   else {
     gsap.to("#sun-toggle", .5, {x: 0, opacity: 1, ease: Power1.easeInOut});
@@ -52,10 +76,18 @@ toggler.addEventListener("click",()=> {
     toggler.classList.add("dark")
     toggler.classList.remove("light")
     body.className = "dark"
+    cacheTheme(body.className)
   }
-  
-});
+}
 
+
+function cacheTheme(theme) {
+  if (theme === "dark") {
+    localStorage.setItem("theme", "dark")
+  }else {
+    localStorage.setItem("theme", "light")
+  }
+}
 
 
 
@@ -86,7 +118,6 @@ gsap.from("#white-hair , #white-head", {
   repeat: "-1",
   yoyo: true,
 });
-
 // monitor text
 tl.from("#computer-text *", { opacity: 0, duration: 1, stagger: 0.1 });
 tl.to(".errMess *", { fill: "red" }, "-=.5");
@@ -168,7 +199,6 @@ class HoverCard {
   }
 }
 
-
 card_data.forEach((e) => {
   new HoverCard(e, .02, 1.02);
 });
@@ -205,7 +235,6 @@ const mouseUpHandler = function () {
   feature_scroll.style.cursor = 'grab';
 };
 
-
 feature_scroll.addEventListener("mousedown", mouseDownHandler)
 
 
@@ -232,7 +261,6 @@ TweenMax.fromTo(
     ease: Power1.easeInOut,
   }
 );
-
 const zeppelinAnimationTime = 4.47;
 TweenMax.to(
   '#zeppelin',
@@ -276,7 +304,6 @@ TweenMax.to(
   );
 });
 
-
 const frontClouds = document.getElementById('clouds-front');
 const frontCloudsWidth = 9106;
 
@@ -319,9 +346,4 @@ copyEmail.addEventListener('click', () => {
       copyEmail.classList.remove("copied")
     })
   })
-})
-
-const scrollHeight = document.body.scrollHeight;
-$(".link2").click(function () {
-  window.scrollTo(10,scrollHeight )
 })

@@ -123,11 +123,9 @@ section {
     justify-content: center;
     align-items: center;
     z-index: 100;
+    overflow: hidden !important;
 }
 
-.wrapper {
-    overflow: hidden;
-}
 
 .loader {
     --path: #2f3545;
