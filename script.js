@@ -14,6 +14,9 @@ const body = document.querySelector("body");
 const card_data = document.querySelectorAll(".feature-item");
 const toggler = document.querySelector("#toggle-svg-container")
 
+const pairSvgTl = gsap.timeline()
+
+
 // caching theme
 if (localStorage.getItem("theme") != null) {
   if (localStorage.getItem("theme") === "dark") {
@@ -121,6 +124,12 @@ tl.from("#computer-text *", { opacity: 0, duration: 1, stagger: 0.1 });
 tl.to(".errMess *", { fill: "red" }, "-=.5");
 tl.to(".errMess *", { fill: "lightgreen" }, "+=1");
 tl.to(".errMess *", { onComplete: () => { tl.restart();},},"+=1");
+
+
+
+
+
+// home svg 
 
 
 //-------------------hover effect
@@ -349,7 +358,9 @@ copyEmail.addEventListener('click', () => {
 // // nighit svg footer
 if (localStorage.getItem("theme") === "dark"){
   toNightsvg()
-}else toDaysvg()
+}else {
+  toDaysvg()
+}
 
 function toNightsvg() {
   gsap.to(".footer-background-svg", { fill: 'url("#linearGradient-2")'})
@@ -357,9 +368,12 @@ function toNightsvg() {
   gsap.to(".sun-core", {fill: "#a2b5bf"})
   gsap.to("#clouds-back", {fill: "#999997", opacity: .2})
 }
+
 function toDaysvg() {
   gsap.to(".footer-background-svg", { fill: 'url("#linearGradient-1")'})
   gsap.to(".sun-light", {fill: "#FFFF66"})
   gsap.to(".sun-core", {fill: "#FFFF66"})
   gsap.to("#clouds-back", {fill: "#FFFF66", opacity: 1})
 }
+
+const footer= document.querySelector("footer")
