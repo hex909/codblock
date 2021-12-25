@@ -69,10 +69,10 @@ background: #a7a3ff;
 
 .light {
 --nav-Bgcolor: #5c6cb2;
---nav-color: #000;
+--nav-color: #fff;
 
 --home-Bgcolor: #5c6cb2;
---home-color: #000;
+--home-color: #fff;
 --home-sun-svg : #f4e962;
 
 --window-color: #313a5e;
@@ -90,9 +90,9 @@ background: #a7a3ff;
 --shadow-color: #000;
 
 
---footer-Bgcolor: #CAF2D7;
+--footer-Bgcolor: #B4D7C0;
 --footer-second: #3e6390;
---footer-color: #000;
+--footer-color: #fff;
 
 
 --hover-Bgcolor: #FEECD4;
