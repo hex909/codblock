@@ -41,11 +41,12 @@ background: #a7a3ff;
 
 --home-Bgcolor: #74176A;
 --home-color: #fff;
+--home-sun-svg : #a2b5bf;
 
---window-color: #ff8300;
+--window-color: #2f2a25;
 --chair-color: #454845;
 --desk-color: #3c3b22;
---display-color: #ffa700;
+--display-color: #bf23af;
 
 --work-Bgcolor: #000;
 --work-color: #fff;
@@ -72,19 +73,20 @@ background: #a7a3ff;
 
 --home-Bgcolor: #5c6cb2;
 --home-color: #000;
+--home-sun-svg : #f4e962;
 
---window-color: #ff8300;
+--window-color: #313a5e;
 --chair-color: #454845;
 --desk-color: #3c3b22;
---display-color: #ffa700;
+--display-color: #6e8bff;
 
 --work-Bgcolor: #70AF85;
 --work-color: #000;
 
 --feature-Bgcolor: #70AF85;
 --feature-color: #000;
---feature-card-Bgcolor: #05f836;
---feature-card-color: #3d3d3d;
+--feature-card-Bgcolor: #05f83600;
+--feature-card-color: #0c0c0c;
 --shadow-color: #000;
 
 
@@ -95,6 +97,13 @@ background: #a7a3ff;
 
 --hover-Bgcolor: #FEECD4;
 --hover-color: #000;
+}
+
+.dark .home-cloud {
+  fill: #304a62;
+  opacity: .85;
+  stroke-width: 2px;
+  stroke: #707a83;
 }
 
 img, svg {
@@ -1058,7 +1067,7 @@ cursor: pointer;
 }
 
 .home-sun {
-  fill: rgb(166, 255, 0);
+  fill: var(--home-sun-svg);
 }
 
 .feature-item {
