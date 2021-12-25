@@ -48,18 +48,18 @@ background: #a7a3ff;
 --desk-color: #3c3b22;
 --display-color: #bf23af;
 
---work-Bgcolor: #000;
+--work-Bgcolor: #1c488c;
 --work-color: #fff;
 
---feature-Bgcolor: #000;
+--feature-Bgcolor: #1c488c;
 --feature-color: #fff;
---feature-card-Bgcolor: #F89F05;
+--feature-card-Bgcolor: #153e7d;
 --feature-card-color: #feecfe;
 --shadow-color: #fff;
 
 
---footer-Bgcolor: #000;
---footer-second: rgb(71, 47, 47);
+--footer-Bgcolor: #002543;
+--footer-second: #333e65;
 --footer-color: #fff;
 
 
@@ -85,7 +85,7 @@ background: #a7a3ff;
 
 --feature-Bgcolor: #70AF85;
 --feature-color: #000;
---feature-card-Bgcolor: #05f83600;
+--feature-card-Bgcolor: #83ce9c;
 --feature-card-color: #0c0c0c;
 --shadow-color: #000;
 
