@@ -67,10 +67,10 @@ background: #a7a3ff;
 }
 
 .light {
---nav-Bgcolor: #ffbb00;
+--nav-Bgcolor: #5c6cb2;
 --nav-color: #000;
 
---home-Bgcolor: #ffbb00;
+--home-Bgcolor: #5c6cb2;
 --home-color: #000;
 
 --window-color: #ff8300;
@@ -78,18 +78,18 @@ background: #a7a3ff;
 --desk-color: #3c3b22;
 --display-color: #ffa700;
 
---work-Bgcolor: #05f859;
+--work-Bgcolor: #70AF85;
 --work-color: #000;
 
---feature-Bgcolor: #05f859;
+--feature-Bgcolor: #70AF85;
 --feature-color: #000;
 --feature-card-Bgcolor: #05f836;
 --feature-card-color: #3d3d3d;
 --shadow-color: #000;
 
 
---footer-Bgcolor: #fff;
---footer-second: rgb(221, 41, 41);
+--footer-Bgcolor: #CAF2D7;
+--footer-second: #3e6390;
 --footer-color: #000;
 
 
