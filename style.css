@@ -46,6 +46,7 @@ background: #a7a3ff;
 --chair-color: #454845;
 --desk-color: #3c3b22;
 --display-color: #ffa700;
+
 --work-Bgcolor: #000;
 --work-color: #fff;
 
@@ -77,13 +78,13 @@ background: #a7a3ff;
 --desk-color: #3c3b22;
 --display-color: #ffa700;
 
---work-Bgcolor: #f89f05;
+--work-Bgcolor: #05f859;
 --work-color: #000;
 
---feature-Bgcolor: #f89f05;
+--feature-Bgcolor: #05f859;
 --feature-color: #000;
---feature-card-Bgcolor: #F89F05;
---feature-card-color: #feecfe;
+--feature-card-Bgcolor: #05f836;
+--feature-card-color: #3d3d3d;
 --shadow-color: #000;
 
 
