@@ -990,7 +990,7 @@ footer {
     display: none;
   }
   .home {
-    padding-top: 4rem;
+    padding-top: 2rem;
   }
   .home::after {
     content: "";
