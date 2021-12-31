@@ -520,6 +520,12 @@ section {
   margin-bottom: 1.2rem;
   max-width: 28ch;
 }
+
+.hologram {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 3.5px ;
+}
+
 .home-paragraph1 {
   margin-bottom: 1rem;
 }
