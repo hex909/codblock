@@ -400,13 +400,6 @@ section {
   transition: box-shadow 0.2s, background-color 0.2s, -webkit-box-shadow 0.2s;
 }
 
-/* .scrolled {
-  background-color: rgba(255, 255, 255, 0.94);
-  position: fixed;
-  box-shadow: 0 0 5px 0px;
-  z-index: 10;
-} */
-
 .nav-container {
   height: var(--nav-bar-height);
   width: 90%;
@@ -691,8 +684,6 @@ section {
   padding: 2rem;
   min-width: 300px;
   height: 350px;
-  /* -webkit-box-shadow: 0 0 5px 0 var(--shadow-color);
-          box-shadow: 0 0 5px 0 var(--shadow-color); */
   border: 5px solid var(--shadow-color);
   border-radius: 10px;
   display: -webkit-box;

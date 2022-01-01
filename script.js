@@ -245,13 +245,6 @@ const mouseUpHandler = function () {
 feature_scroll.addEventListener("mousedown", mouseDownHandler)
 
 
-// mousewheel scroll slider
-// feature_scroll.addEventListener("wheel", (e) => {
-//     e.preventDefault();
-//     feature_scroll.scrollLeft += e.deltaY + 20;
-// });
-
-
 // --------------------------------------footer animation 
   
 gsap.fromTo(
