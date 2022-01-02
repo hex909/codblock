@@ -1,13 +1,5 @@
 gsap.registerPlugin(ScrollTrigger)
 
-// ----------------------loading
-document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
-    $(".load-wrap").fadeOut(1000);
-  }, 300);
-});
-
-
 const nav_li1 = document.querySelector(".item1");
 const nav_li2 = document.querySelector(".item2");
 const body = document.querySelector("body");
@@ -15,7 +7,6 @@ const card_data = document.querySelectorAll(".feature-item");
 const toggler = document.querySelector("#toggle-svg-container")
 
 const pairSvgTl = gsap.timeline()
-
 
 // caching theme
 if (localStorage.getItem("theme") != null) {
@@ -124,10 +115,6 @@ tl.from("#computer-text *", { opacity: 0, duration: 1, stagger: 0.1 });
 tl.to(".errMess *", { fill: "red" }, "-=.5");
 tl.to(".errMess *", { fill: "lightgreen" }, "+=1");
 tl.to(".errMess *", { onComplete: () => { tl.restart();},},"+=1");
-
-
-
-
 
 // home svg 
 
@@ -369,4 +356,71 @@ function toDaysvg() {
   gsap.to("#clouds-back", {fill: "#FFFF66", opacity: 1})
 }
 
-const footer= document.querySelector("footer")
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    $(".load-wrap").fadeOut(700);
+    gsap.from(".home-title", {
+      duration: 1.5,
+      x: "-20px",
+      opacity: 0,
+    })
+    gsap.from(".image-con", {
+      duration: 1.5,
+      x: "40px",
+      opacity: 0,
+    })
+    gsap.from(".nav-items > li, .nav-items div", {
+      duration: .91,
+      x: "40px",
+      opacity: 0,
+      stagger: .2
+    })
+    gsap.from(".logo", {
+      duration: 1,
+      x: "-40px",
+      opacity: 0,
+      ease:  "bounce.out"
+    })
+  },800);
+});
+
+gsap.from(".work-card", {
+  scrollTrigger: {
+    trigger:    ".work-card",
+    start: "top 85%",
+    // end: "top 15%",
+    toggleActions: "play complete none reverse",
+    // markers: true
+  },
+  scale: .2,
+  duration: .5,
+  opacity:0,
+  stagger: .2,
+})
+
+gsap.from(".feature-item", {
+  scrollTrigger: {
+    trigger: ".feature-item",
+    start: "top 85%",
+    toggleActions: "play complete none reverse",
+    // markers: true
+  },
+  x: 100,  
+  duration: .5,
+  opacity:0,
+  stagger: .2,
+})
+
+gsap.from(".features-text-con *", {
+  scrollTrigger: {
+    trigger: ".features-text-con *",
+    start: "top 85%",
+    // end: "top 15%",
+    toggleActions: "play complete none reverse",
+    // markers: true
+  },
+  x: -100,  
+  duration: .5,
+  opacity:0,
+  stagger: .2,
+})
