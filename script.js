@@ -1,4 +1,29 @@
-gsap.registerPlugin(ScrollTrigger)
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => {
+    $(".load-wrap").fadeOut(700);
+    gsap.from(".home-title", {
+      duration: 1.5,
+      x: "-20px",
+      opacity: 0,
+    })
+    gsap.from(".image-con", {
+      duration: 1.5,
+      x: "40px",
+      opacity: 0,
+    })
+    gsap.from(".nav-items > li, .nav-items div", {
+      duration: .91,
+      x: "40px",
+      opacity: 0,
+      stagger: .2
+    })
+    gsap.from(".logo", {
+      duration: 1,
+      x: "-40px",
+      opacity: 0,
+    })
+  },800);
+});
 
 const nav_li1 = document.querySelector(".item1");
 const nav_li2 = document.querySelector(".item2");
@@ -34,11 +59,6 @@ if (localStorage.getItem("theme") != null) {
 }
 
 //toggler
-gsap.set(".stars", {x: 0, y: 0, opacity: 0});
-gsap.set("#moon-toggle, .star", {opacity: 0});
-gsap.set("#sun-toggle, #cloud, #moon-toggle", {x: 0});
-
-
 toggler.addEventListener("click", ()=> {
   if (toggler.classList.contains("dark")) {
     togglerAnimate("dark")
@@ -117,8 +137,6 @@ tl.to(".errMess *", { fill: "lightgreen" }, "+=1");
 tl.to(".errMess *", { onComplete: () => { tl.restart();},},"+=1");
 
 // home svg 
-
-
 //-------------------hover effect
 class HoverCard {
   constructor(el, b, scale= 1.05) {
@@ -196,7 +214,6 @@ class HoverCard {
 card_data.forEach((e) => {
   new HoverCard(e, .02, 1.02);
 });
-
 new HoverCard(nav_li1, 0.2);
 new HoverCard(nav_li2, 0.2);
 
@@ -291,25 +308,9 @@ gsap.to(
   );
 });
 
-const frontClouds = document.getElementById('clouds-front');
-const frontCloudsWidth = 9106;
-
-gsap.fromTo(
-  frontClouds,
-  11.98,
-  {
-    x: -frontCloudsWidth / 2
-  },
-  {
-    x: 0,
-    repeat: -1,
-    ease: Power0.easeNone,
-  }
-)
 
 const backClouds = document.getElementById('clouds-back')
-const backCloudsWidth = 3716; // from sketch app
-
+const backCloudsWidth = 3716; 
 gsap.fromTo(
   backClouds,
   17.43,
@@ -355,72 +356,3 @@ function toDaysvg() {
   gsap.to(".sun-core", {fill: "#FFFF66"})
   gsap.to("#clouds-back", {fill: "#FFFF66", opacity: 1})
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
-    $(".load-wrap").fadeOut(700);
-    gsap.from(".home-title", {
-      duration: 1.5,
-      x: "-20px",
-      opacity: 0,
-    })
-    gsap.from(".image-con", {
-      duration: 1.5,
-      x: "40px",
-      opacity: 0,
-    })
-    gsap.from(".nav-items > li, .nav-items div", {
-      duration: .91,
-      x: "40px",
-      opacity: 0,
-      stagger: .2
-    })
-    gsap.from(".logo", {
-      duration: 1,
-      x: "-40px",
-      opacity: 0,
-      ease:  "bounce.out"
-    })
-  },800);
-});
-
-gsap.from(".work-card", {
-  scrollTrigger: {
-    trigger:    ".work-card",
-    start: "top 85%",
-    // end: "top 15%",
-    toggleActions: "play complete none reverse",
-    // markers: true
-  },
-  scale: .2,
-  duration: .5,
-  opacity:0,
-  stagger: .2,
-})
-
-gsap.from(".feature-item", {
-  scrollTrigger: {
-    trigger: ".feature-item",
-    start: "top 85%",
-    toggleActions: "play complete none reverse",
-    // markers: true
-  },
-  x: 100,  
-  duration: .5,
-  opacity:0,
-  stagger: .2,
-})
-
-gsap.from(".features-text-con *", {
-  scrollTrigger: {
-    trigger: ".features-text-con *",
-    start: "top 85%",
-    // end: "top 15%",
-    toggleActions: "play complete none reverse",
-    // markers: true
-  },
-  x: -100,  
-  duration: .5,
-  opacity:0,
-  stagger: .2,
-})
