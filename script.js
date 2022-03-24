@@ -25,6 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
   },800);
 });
 
+const item2 = document.querySelector('.item2')
+
+item2.addEventListener('click', () => {
+   window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+})
+
 const nav_li1 = document.querySelector(".item1");
 const nav_li2 = document.querySelector(".item2");
 const body = document.querySelector("body");
